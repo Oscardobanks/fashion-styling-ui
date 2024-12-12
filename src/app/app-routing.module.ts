@@ -13,7 +13,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { authGuard } from './services/auth.guard';
 import { StyleFormComponent } from './components/style/style-form/style-form.component';
-import { ChatComponent } from './pages/chat/chat.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
@@ -37,7 +36,7 @@ const routes: Routes = [
     canActivate: [authGuard],
     component: ProfileComponent,
   },
-  { path: 'chat', component: ChatComponent },
+  // { path: 'chat', component: ChatComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 
