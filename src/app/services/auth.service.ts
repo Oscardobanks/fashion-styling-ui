@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import * as jwtDecode from 'jwt-decode';
+import { environment } from 'src/environments/environment';
 
 interface Author {
   _id: string;
@@ -33,11 +34,11 @@ export class AuthService {
     about: '',
   };
 
-  private url = 'http://localhost:5000/auth/';
+  private url = `${environment.apiUrl}/auth/`;
 
-  private blogUrl = 'http://localhost:5000/article/';
+  private blogUrl = `${environment.apiUrl}/article/`;
 
-  private authorUrl = 'http://localhost:5000/user/';
+  private authorUrl = `${environment.apiUrl}/user/`;
 
   registerUser(user: any) {
     return this.http.post(this.url + 'register-user', user);
